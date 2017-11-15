@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="cn.uc.mapper.UserMapper">
+	<cache eviction="LRU" flushInterval="1200000"	size="300"	readOnly="false"/>
+	
+	<select id="getAllObj" resultType="User" >
+	select * from  t_user
+	</select>
+	<select id="userLogin" parameterType="User" resultType="User">
+  		select * from t_user where u_username=#{u_username} and u_password=#{u_password}
+  		
+  	</select>
+	
+	<select id="selectbynicknameorusername" parameterType="User" resultType="User">
+			select * from t_user
+	<where>
+		<choose>
+				<when test="id!=null">
+				and  id=#{id}
+				</when>
+				<when test="u_nickname!=null">
+				and  u_nickname like  concat(concat(#{'%',u_nickname,'%'}))
+				</when>
+				<when test="u_username!=null">
+				and  u_username like  concat(concat(#{'%',u_username,'%'}))
+				</when>
+		</choose>
+	</where>
+	</select>
+	
+
+	
+	<insert id="insertUser" parameterType="User">
+			insert into t_user(u_username,u_nickname,u_password,u_sex,u_phonenum,u_email,u_headimg,u_state,u_creatime,u_birthday,u_remark,u_update,u_provinceid,u_cityid,u_areaid)
+							values(#{u_username},#{u_nickname},#{u_password},#{u_sex},#{u_phonenum},#{u_email},#{u_headimg},#{u_state},#{u_creatime},#{u_birthday},#{u_remark},#{u_update},#{u_provinceid},#{u_cityid},#{u_areaid});			
+		<selectKey resultType="int" order="AFTER"  keyProperty="id">
+		select LAST_INSERT_ID() as id		
+		</selectKey> 
+	</insert>
+
+	<delete id="deleteUserByid" parameterType="User">
+	delete from t_user where id=#{id}
+	</delete>
+	<update id="updateUser" parameterType="User">
+	update  t_user 
+	<set>
+	<if test="u_usernmae!=null;">
+		u_username=#{u_username}
+	</if>
+	<if test="u_nickname!=null">
+		u_nickname=#{u_nickname}
+	</if>
+	<if test="u_password!=null">
+		u_password=#{u_password}
+	</if>
+	<if test="u_sex!=null">
+		u_sex=#{u_sex}
+	</if>
+	<if test="u_u_phonenum!=null">
+		u_phonenum=#{u_phonenum}
+	</if>
+	<if test="u_headimg!=null">
+		u_headimg=#{u_headimg}
+	</if>
+	<if test="u_email!=null">
+		u_email=#{u_email}
+	</if>
+	<if test="u_state!=null">
+		u_state=#{u_state}
+	</if>
+	<if test="u_createtime!=null">
+		u_createtime=#{u_createtime}
+	</if>
+	<if test="u_birthday!=null">
+		u_birthday=#{u_birthday}
+	</if>
+	<if test="u_update!=null">
+		u_update=#{u_update}
+	</if>
+	<if test="u_remark!=null">
+		u_remark=#{u_remark}
+	</if>
+	<if test="u_provinceid!=null">
+		u_provinceid=#{u_provinceid}
+	</if>
+	<if test="u_cityid!=null">
+		u_cityid=#{u_cityid}
+	</if>
+	<if test="u_areaid!=null">
+		u_areaid=#{u_areaid}
+	</if>
+	</set>
+	where id=#{id}
+	</update>
+	
+	
+	 
+</mapper>

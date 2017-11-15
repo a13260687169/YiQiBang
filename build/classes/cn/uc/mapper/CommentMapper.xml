@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.uc.mapper.CommentMapper">
+   
+   <cache eviction="LRU" flushInterval="1200000"	size="300"	readOnly="false"/>
+    <!-- 获取所有评论 -->
+    <select id="selectAll" resultMap="CommentMap">
+       select * from t_comment
+    </select>
+    <select id="selectByUserandNews">
+     selecr * from t_comment
+     <where>
+     <choose>
+     <when test="id!=null">
+       id=#{id}
+     </when>
+     <when test="t_u_id!=null">
+     	t_u_id=#{t_u_id}
+     </when>
+     <when test="t_n_id!=null">
+     t_n_id=#{id}
+     </when>
+     </choose>
+     </where>
+    </select>
+    <resultMap type="Comment" id="CommentMap">
+      <id property="id" column="id"/>
+      <result property="content" column="c_content"/>
+      <result property="thumbsCount" column="c_supportcount"/>
+      <result property="createTime" column="c_createtime"/>
+      <result property="userId" column="t_u_id"/>
+      <result property="newsId" column="t_n_id"/>
+    </resultMap>
+ 
+    <delete id="deleteComment" parameterType="Comment" >
+    	delete from t_comment where id=#{id}
+    </delete>
+    <insert id="insertComment" parameterType="Comment" >
+     insert into t_comment(t_n_id,t_u_id,c_content,c_createtime,c_supportcount) value(#{newsId},#{userId},#{content},#{createTime},#{thumbsCount})
+    </insert>
+    <update id="updateComment" parameterType="Comment">
+  	update t_comment set t_n_id=#{newsId},t_u_id=#{userId},c_content=#{content},c_createtime=#{createTime},c_supportcount=#{thumbsCount} where id=#{id};   
+    </update>
+</mapper>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="cn.uc.mapper.AdminMapper">
+	<cache eviction="LRU" flushInterval="1200000"	size="300"	readOnly="false"/>
+	<select id="getAllObj" parameterType="Admin" resultType="Admin">
+	select  * from t_admin a join t_user  u on  u.id=a.t_u_id 
+	</select>	
+	<select id="AdminLogin" parameterType="User" resultType="">
+	select  * from t_admin a join t_user u on  u.id=a.t_u_id where u.u_username=#{u_username} and u.u_password=#{u_password}
+	</select>
+	<select id="selectAdimByIdAndLevel" resultType="Admin" parameterType="Admin">
+	select  * from t_admin a join t_user u on  u.id=a.t_u_id 
+	<where>
+	<choose>
+	<when test="id!=null">
+	 a.id=#{id}
+	</when>
+	<when test="u_level">
+	u_level=#{u_level}
+	</when>
+	</choose>
+	</where>
+	
+	</select>
+	
+	<insert id="insertAdmin" parameterType="Admin">
+	insert into t_admin(id,t_u_id,u_state,u_level) values(#{id},#{t_u_id},#{u_state},#{u_level}))
+	</insert>
+	<delete id="deleteAdmin" >
+		delete from t_admin where id=#{id}
+	</delete>
+
+	<update id="updateAdmin">
+	
+	</update>
+</mapper>

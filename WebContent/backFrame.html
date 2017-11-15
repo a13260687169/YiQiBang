@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+   <link rel="stylesheet" href="BootStrap/bootstrap-3.3.7/dist/css/bootstrap.min.css">
+    <script src="jquery/jquery-3.2.1.min.js"></script>
+    <script src="BootStrap/bootstrap-3.3.7/dist/js/bootstrap.min.js"></script>
+    <script>
+        $(function(){
+            $(".list1>div").click(function () {
+                $(".right>div").css("display","none");
+                $(".right>div").eq($(this).index()).css("display","block")
+            })
+        });
+    </script>
+<style>
+    *{
+        margin:0;
+        padding:0;
+    }
+    div{
+  border: 1px solid red;
+    }
+ #managerFrame{
+     height: 520px;
+     width: 920px;
+     margin: 50px 100px;
+
+
+
+ }
+  .head{
+      height: 60px;
+      line-height: 60px;
+
+
+  }
+ .row:first-child{
+     height: 60px;
+      background: #1f324b;
+
+  }
+ .row:first-child>div{
+     height: 60px;
+
+ }
+    .row:first-child>div:nth-child(3) a{
+        margin-left: 20px;
+    }
+    .row:first-child>div:nth-child(3) a:nth-child(2){
+        margin-left: 25px;
+
+    }
+    .head img{
+        height: 40px;
+    }
+    span{
+        color: white;
+    }
+    .row:nth-child(2)>div{
+        height: 460px;
+
+    }
+    .row:nth-child(2)>div:first-child {
+
+        background: #761883;
+    }
+    .list1>div{
+        height: 36px;
+        line-height: 36px;
+        margin: 3px;
+    }
+    .list1 span{
+        color: palevioletred;
+    }
+    .list1>img{
+        margin-top: 200px;
+    }
+    .right{
+        position: relative;
+    }
+    .right>div{
+
+        width: 90%;
+        height:100%;
+        position: absolute;
+    }
+    .right>div>table{
+        top: 50px;
+
+    }
+   .right>div>nav{
+      margin-left: 30%;
+   }
+    .right>div>nav span{
+        color: black;
+    }
+
+
+    #headSearch{
+
+
+        margin: 10px auto;
+
+    }
+
+
+</style>
+
+</head>
+<body>
+<div id="managerFrame" class="container">
+<div class="row">
+    <div class="col-md-3 head">
+        <img src="ManagerImg/公共部分/touxiang.png" class="img-circle" alt="图片加载失败">
+        <span>刘老师</span>
+    </div>
+    <div class="col-md-7">
+
+
+        <div class="input-group" id="headSearch">
+            <input type="text" class="form-control" placeholder="请输入关键字">
+      <span class="input-group-btn">
+        <button class="btn btn-default" type="button">搜索</button>
+      </span>
+        </div><!-- /input-group -->
+
+
+
+
+
+    </div>
+    <div class="col-md-2">
+       <a href="#"> <img src="ManagerImg/公共部分/suoxiaochuankou.png"></a>
+        <a href="#"><img src="ManagerImg/公共部分/guanbi.png"></a>
+    </div>
+
+</div>
+    <div class="row">
+        <div class="col-md-2 list1">
+            <div><img src="ManagerImg/公共部分/yonghuguanli.png"><a href="#"><span>用户管理</span></a></div>
+            <div><img src="ManagerImg/公共部分/xinwenguuanli.png"><a href="#"><span>新闻管理</span></a></div>
+            <div><img src="ManagerImg/公共部分/pinglunguanli.png"><a href="#"><span>评论管理</span></a></div>
+            <div><img src="ManagerImg/公共部分/xinwenpachong.png"><a href="#"><span>新闻爬虫</span></a></div>
+            <div><img src="ManagerImg/公共部分/xinwenguanlfenlei.png"><a href="#"><span>新闻分类管理</span></a></div>
+            <img src="images/logo.png">
+        </div>
+
+        <div class="col-md-10 right ">
+            <div>
+                <form class="form-inline">
+                    <div class="form-group">
+                        <label for="name">姓名1</label>
+                        <input type="text" class="form-control" id="name" placeholder="Jane Doe">
+                    </div>
+                    <div class="form-group">
+                        <label for="account">账号1</label>
+                        <input type="text" class="form-control" id="account" placeholder="jane.doe@example.com">
+                    </div>
+                    <button type="submit" class="btn btn-default ">查找</button>
+                    <button type="submit" class="btn btn-default ">添加</button>
+
+                </form>
+            <table class="table table-bordered ">
+                <thead>
+                <th>序号</th>
+                <th>用户名</th>
+                <th>账号</th>
+                <th>内容</th>
+                <th>操作</th>
+                </thead>
+                <tbody>
+                <tr >
+                    <td>01</td>
+                    <td>朱元璋</td>
+                    <td>13260687169</td>
+                    <td>大家中秋节快乐</td>
+                    <td><a href="#"><img src="ManagerImg/公共部分/xiugai.png"></a>
+                        <a href="#"><img src="ManagerImg/公共部分/shanchu.png"></a>
+                    </td>
+                </tr>
+                <tr >
+                    <td>01</td>
+                    <td>朱元璋</td>
+                    <td>13260687169</td>
+                    <td>大家中秋节快乐</td>
+                    <td><a href="#"><img src="ManagerImg/公共部分/xiugai.png"></a>
+                        <a href="#"><img src="ManagerImg/公共部分/shanchu.png"></a>
+                    </td>
+                </tr>
+
+                </tbody>
+            </table>
+
+                <nav aria-label="Page navigation">
+                    <ul class="pagination">
+                        <li >
+                            <a href="#" aria-label="Previous" >
+                                <span aria-hidden="true">&laquo;</span>
+                            </a>
+                        </li>
+                        <li ><a href="#">1</a></li>
+                        <li><a href="#">2</a></li>
+                        <li><a href="#">3</a></li>
+                        <li><a href="#">4</a></li>
+                        <li><a href="#">5</a></li>
+                        <li>
+                            <a href="#" aria-label="Next">
+                                <span aria-hidden="true">&raquo;</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <div>
+                <form class="form-inline">
+                    <div class="form-group">
+                        <label for="name">姓名2</label>
+                        <input type="text" class="form-control"  placeholder="Jane Doe">
+                    </div>
+                    <div class="form-group">
+                        <label for="account">账号2</label>
+                        <input type="text" class="form-control"  placeholder="jane.doe@example.com">
+                    </div>
+                    <button type="submit" class="btn btn-default ">查找</button>
+                </form>
+                <table class="table table-bordered ">
+                    <thead>
+                    <th>序号</th>
+                    <th>用户名</th>
+                    <th>账号</th>
+                    <th>内容</th>
+                    <th>操作</th>
+                    </thead>
+                    <tbody>
+                    <tr >
+                        <td>01</td>
+                        <td>朱元璋</td>
+                        <td>13260687169</td>
+                        <td>大家中秋节快乐</td>
+                        <td><a href="#"><img src="ManagerImg/公共部分/xiugai.png"></a>
+                            <a href="#"><img src="ManagerImg/公共部分/shanchu.png"></a>
+                        </td>
+                    </tr>
+
+                    </tbody>
+                </table>
+                <nav aria-label="Page navigation">
+                    <ul class="pagination">
+                        <li >
+                            <a href="#" aria-label="Previous" >
+                                <span aria-hidden="true">&laquo;</span>
+                            </a>
+                        </li>
+                        <li ><a href="#">1</a></li>
+                        <li><a href="#">2</a></li>
+                        <li><a href="#">3</a></li>
+                        <li><a href="#">4</a></li>
+                        <li><a href="#">5</a></li>
+                        <li>
+                            <a href="#" aria-label="Next">
+                                <span aria-hidden="true">&raquo;</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <div>
+                <form class="form-inline">
+                    <div class="form-group">
+                        <label for="name">姓名3</label>
+                        <input type="text" class="form-control"  placeholder="Jane Doe">
+                    </div>
+                    <div class="form-group">
+                        <label for="account">账号3</label>
+                        <input type="text" class="form-control"  placeholder="jane.doe@example.com">
+                    </div>
+                    <button type="submit" class="btn btn-default ">查找</button>
+                </form>
+                <table class="table table-bordered ">
+                    <thead>
+                    <th>序号</th>
+                    <th>用户名</th>
+                    <th>账号</th>
+                    <th>内容</th>
+                    <th>操作</th>
+                    </thead>
+                    <tbody>
+                    <tr >
+                        <td>01</td>
+                        <td>朱元璋</td>
+                        <td>13260687169</td>
+                        <td>大家中秋节快乐</td>
+                        <td><a href="#"><img src="ManagerImg/公共部分/xiugai.png"></a>
+                            <a href="#"><img src="ManagerImg/公共部分/shanchu.png"></a>
+                        </td>
+                    </tr>
+
+                    </tbody>
+                </table>
+                <nav aria-label="Page navigation">
+                    <ul class="pagination">
+                        <li >
+                            <a href="#" aria-label="Previous" >
+                                <span aria-hidden="true">&laquo;</span>
+                            </a>
+                        </li>
+                        <li ><a href="#">1</a></li>
+                        <li><a href="#">2</a></li>
+                        <li><a href="#">3</a></li>
+                        <li><a href="#">4</a></li>
+                        <li><a href="#">5</a></li>
+                        <li>
+                            <a href="#" aria-label="Next">
+                                <span aria-hidden="true">&raquo;</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <div>
+                <form class="form-inline">
+                    <div class="form-group">
+                        <label for="name">姓名4</label>
+                        <input type="text" class="form-control"  placeholder="Jane Doe">
+                    </div>
+                    <div class="form-group">
+                        <label for="account">账号4</label>
+                        <input type="text" class="form-control"  placeholder="jane.doe@example.com">
+                    </div>
+                    <button type="submit" class="btn btn-default ">查找</button>
+                </form>
+                <table class="table table-bordered ">
+                    <thead>
+                    <th>序号</th>
+                    <th>用户名</th>
+                    <th>账号</th>
+                    <th>内容</th>
+                    <th>操作</th>
+                    </thead>
+                    <tbody>
+                    <tr >
+                        <td>01</td>
+                        <td>朱元璋</td>
+                        <td>13260687169</td>
+                        <td>大家中秋节快乐</td>
+                        <td><a href="#"><img src="ManagerImg/公共部分/xiugai.png"></a>
+                            <a href="#"><img src="ManagerImg/公共部分/shanchu.png"></a>
+                        </td>
+                    </tr>
+
+                    </tbody>
+                </table>
+                <nav aria-label="Page navigation">
+                    <ul class="pagination">
+                        <li >
+                            <a href="#" aria-label="Previous" >
+                                <span aria-hidden="true">&laquo;</span>
+                            </a>
+                        </li>
+                        <li ><a href="#">1</a></li>
+                        <li><a href="#">2</a></li>
+                        <li><a href="#">3</a></li>
+                        <li><a href="#">4</a></li>
+                        <li><a href="#">5</a></li>
+                        <li>
+                            <a href="#" aria-label="Next">
+                                <span aria-hidden="true">&raquo;</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <div>
+                <form class="form-inline">
+                    <div class="form-group">
+                        <label for="name">姓名5</label>
+                        <input type="text" class="form-control"  placeholder="Jane Doe">
+                    </div>
+                    <div class="form-group">
+                        <label for="account">账号5</label>
+                        <input type="text" class="form-control"  placeholder="jane.doe@example.com">
+                    </div>
+                    <button type="submit" class="btn btn-default ">查找</button>
+                </form>
+                <table class="table table-bordered ">
+                    <thead>
+                    <th>序号</th>
+                    <th>用户名</th>
+                    <th>账号</th>
+                    <th>内容</th>
+                    <th>操作</th>
+                    </thead>
+                    <tbody>
+                    <tr >
+                        <td>01</td>
+                        <td>朱元璋</td>
+                        <td>13260687169</td>
+                        <td>大家中秋节快乐</td>
+                        <td><a href="#"><img src="ManagerImg/公共部分/xiugai.png"></a>
+                            <a href="#"><img src="ManagerImg/公共部分/shanchu.png"></a>
+                        </td>
+                    </tr>
+
+                    </tbody>
+                </table>
+            </div>
+            <div>
+                <form class="form-inline">
+                    <div class="form-group">
+                        <label for="name">姓名2</label>
+                        <input type="text" class="form-control"  placeholder="Jane Doe">
+                    </div>
+                    <div class="form-group">
+                        <label for="account">账号2</label>
+                        <input type="text" class="form-control"  placeholder="jane.doe@example.com">
+                    </div>
+                    <button type="submit" class="btn btn-default ">查找</button>
+                </form>
+                <table class="table table-bordered ">
+                    <thead>
+                    <th>序号</th>
+                    <th>用户名</th>
+                    <th>账号</th>
+                    <th>内容</th>
+                    <th>操作</th>
+                    </thead>
+                    <tbody>
+                    <tr >
+                        <td>01</td>
+                        <td>朱元璋</td>
+                        <td>13260687169</td>
+                        <td>大家中秋节快乐</td>
+                        <td><a href="#"><img src="ManagerImg/公共部分/xiugai.png"></a>
+                            <a href="#"><img src="ManagerImg/公共部分/shanchu.png"></a>
+                        </td>
+                    </tr>
+
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+</body>
+</html>

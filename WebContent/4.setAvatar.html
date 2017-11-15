@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="/BootStrap/bootstrap-3.3.7/dist/css/bootstrap.min.css">
+    <script src="/jquery/jquery-3.2.1.min.js"></script>
+    <script src="/BootStrap/bootstrap-3.3.7/dist/js/bootstrap.min.js"></script>
+
+
+<style>
+
+    #mytop2 li:hover {
+        background: deepskyblue;
+
+    }
+
+
+*{
+    padding: 0px;
+    margin: 0px;
+}
+
+    body {
+        background: #f2f1ef;
+    }
+    .row .top1{
+        background: gray;
+    }
+    .row .top1 span{
+        color: white;
+    }
+    .row>div{
+        background: white;
+    }
+
+    #touxiang1{
+        width: 230px;
+        height: 230px;
+
+        margin-top: 10px;
+        background: gray;
+
+    }
+    #touxiang1>div:first-child{
+        width: 200px;
+        height: 200px;
+        margin-top: 10px;
+
+    }
+    #touxiang2{
+        width: 100px;
+        height: 100px;
+
+
+
+
+    }
+    #touxiang2 img{
+        width: 100%;
+        height: 100%;
+    }
+    .magTx{
+        margin: 40px 60px;
+    }
+
+
+
+
+
+
+
+</style>
+</head>
+<body>
+
+<nav class="navbar navbar-default ">
+    <div class="container " id="mytop2">
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li><a href="#"><p>推荐</p></a></li>
+                <li><a href="#"><p>热点</p></a></li>
+                <li><a href="#"><p>图片</p></a></li>
+                <li><a href="#"><p>科技</p></a></li>
+                <li><a href="#"><p>社会APP</p></a></li>
+                <li><a href="#"><p>体育</p></a></li>
+
+                <li role="presentation" class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
+                       aria-expanded="false">
+                        更多 <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#"><p>汽车</p></a></li>
+                        <li><a href="#"><p>财经</p></a></li>
+                        <li><a href="#"><p>娱乐</p></a></li>
+                    </ul>
+                </li>
+            </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#"><img src="setAvatarImg/xiaotouxiang.png">明明就</a></li>
+                <li><a href="#"><p>退出</p></a></li>
+
+            </ul>
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+</nav>
+<div class="container" >
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2 top1">
+            <div class="col-md-2">
+            <a href="#"><img src="setAvatarImg/datouxiang.png"></a>
+          </div>
+            <div>
+            <p>明明就</p>
+              <p>活跃天数</p>
+             </div>
+        </div>
+        </div>
+    <div class="row">
+
+        <div class="col-md-8 col-md-offset-2">
+
+            <div class="col-md-offset-2">
+                <div>
+                <ul class="nav nav-tabs">
+                    <li role="presentation" ><a href="#">个人资料</a></li>
+                    <li role="presentation"><a href="#">修改头像</a></li>
+                    <li role="presentation"><a href="#">修改密码</a></li>
+                    <li role="presentation"><a href="#">账号安全</a></li>
+                </ul>
+            </div>
+                <div>
+                    <p>设置一个你喜欢的头像</p>
+                    <p>(请选择你喜欢的头像，默认大小为xx)</p>
+                </div>
+                <div id="tupian">
+                    <div  class="col-md-8" id="touxiang1">
+                        <div>
+
+                        <img src="setAvatarImg/xuanzetouxiang.png">
+
+                        </div>
+                    </div>
+                    <div  class="col-md-4 magTx">
+                        <p>头像预览</p>
+                        <div id="touxiang2">
+                            <img src="setAvatarImg/touxiangyulan.png">
+                           </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+        </div>
+        <div class="col-md-8 col-md-offset-2">
+            <div class="col-md-offset-2">
+                <label for="exampleInputFile">请选择文件</label>
+                <input type="file" id="exampleInputFile" value="选择头像"  class="bg-primary">
+
+            </div>
+        </div>
+    </div>
+
+
+
+</div>
+
+
+</body>
+</html>
